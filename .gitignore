@@ -1,0 +1,40 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.out.ps
+*.pag
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+# Generated PDF (keep source, not output)
+*.pdf
+
+# OS files
+.DS_Store
+._*
+.Trashes
+.Spotlight-V100
+.fseventsd
+Thumbs.db
+
+# AI tool files
+CLAUDE.md
+.claude/
+.codex/
+.copilot/
+.cursor/
+.aider*
+
+# IDE settings
+.vscode/
+.positron/
