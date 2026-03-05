@@ -2,9 +2,19 @@
 
 Mirror of the official Wiley journal LaTeX template (USG.cls v6.0, May 2024) from [Wiley Author Services](https://authorservices.wiley.com/).
 
-## Bug Fixes
+## Bug Fixes (this branch)
 
-The original template has bugs in `wileyNJD-Chicago.bst` that cause BibTeX errors. See the [`fixes`](https://github.com/cameronbracken/WileyDesign/tree/fixes) branch for corrections.
+This branch contains fixes for bugs in `wileyNJD-Chicago.bst` that cause BibTeX errors in the original Wiley template.
+
+### Fixed Issues
+
+- **Undefined variable**: `Volume` (uppercase) changed to `volume` (the actual BibTeX field) on lines 757 and 790
+- **Stack corruption**: Removed erroneous double `* *` concatenation operators on lines 765 and 797
+- **Orphaned stack item**: Fixed `format.editors.byfml` call in the `book` function that pushed a value without consuming it
+
+### Known Limitations
+
+The original `.bst` file has deeper structural issues with BibTeX stack management that cause warnings (but not errors) during compilation. The bibliography output is still correct despite these warnings.
 
 ## Usage
 
