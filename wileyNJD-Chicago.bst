@@ -754,7 +754,7 @@ FUNCTION {format.jour.vol}
     { volume empty$
        { "no number and no volume in " cite$ * warning$
          "" * }
-       { "~{" * Volume * "}" * }
+       { "~" * volume * }
       if$
     }
     { volume empty$
@@ -762,7 +762,7 @@ FUNCTION {format.jour.vol}
        ", no. " * number * "" * }
       { "~" *
 %        volume.space 
-        ", no. " * number * "" * * }
+        ", no. " * number * }
       if$
     } %emphasize
   if$
@@ -787,14 +787,14 @@ FUNCTION {format.jour.vol.num}
     { volume empty$
        { "no number and no volume in " cite$ * warning$
          "" * }
-      {  *  Volume   * }
+      { "~" * volume * }
       if$
     }
     {  volume empty$
       {"no volume for " cite$ * warning$
        ", no. " * number * "" * }
       { "~" *
-		volume * ", no. " * number * "" * * }
+		volume * ", no. " * number * }
       if$
     } %emphasize
   if$
@@ -1221,8 +1221,7 @@ FUNCTION {book}
   title emphasize output  
 %  "title" output.check
   crossref missing$
-    { title output
-	format.editors.byfml
+    { format.editors.byfml output
 	format.bvolume output
       new.block
       format.number.series output
